@@ -4,19 +4,17 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity(name = "produto")
+@Entity(name = "ProdutoEntity")
 @Table(name = "produtos")
 @Getter
 @Setter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class ProdutoEntity {
     @Id
@@ -32,7 +30,7 @@ public class ProdutoEntity {
     @Column(name = "category")
     private String categoria;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 800)
     private String descricao;
 
     @Column(name = "image")
