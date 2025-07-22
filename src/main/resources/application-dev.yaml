@@ -2,10 +2,26 @@ fake-api:
   url: https://fakestoreapi.com
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        package-to-scan: com.luanmiranda.fakeapi.infrastructure.entities
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
   cloud:
     loadbalancer:
       ribbon:
         enabled: true
+
 
 server:
   port: 8181
