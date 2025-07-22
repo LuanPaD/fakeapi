@@ -1,4 +1,4 @@
-package com.luanmiranda.fakeapi.FakeAPI.infrastructure;
+package com.luanmiranda.fakeapi.FakeAPI.infrastructure.client;
 
 import com.luanmiranda.fakeapi.FakeAPI.apiv1.dto.ProductsDTO;
 import org.springframework.cloud.openfeign.FeignClient;
