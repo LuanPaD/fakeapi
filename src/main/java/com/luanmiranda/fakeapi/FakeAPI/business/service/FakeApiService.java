@@ -30,7 +30,7 @@ public class FakeApiService {
                 produtoService.salvaProdutos(produtoConverter.toEntity(produto));
             });
 
-            return produtoConverter.toListDTO(produtoService.buscaTodosProdutos());
+            return produtoService.buscaTodosProdutosDTO();
         } catch (Exception e) {
             throw new RuntimeException("Erro ao buscar e gravar produtos: " + e.getMessage(), e);
         }
