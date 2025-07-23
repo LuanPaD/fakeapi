@@ -3,9 +3,9 @@ fake-api:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password:
+    url: jdbc:postgresql://localhost:${DB_PORT}/postgres
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
