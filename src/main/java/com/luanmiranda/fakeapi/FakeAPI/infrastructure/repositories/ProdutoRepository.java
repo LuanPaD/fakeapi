@@ -1,6 +1,7 @@
 package com.luanmiranda.fakeapi.FakeAPI.infrastructure.repositories;
 
 import com.luanmiranda.fakeapi.FakeAPI.infrastructure.entities.ProdutoEntity;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +12,6 @@ public interface ProdutoRepository extends JpaRepository<ProdutoEntity, String> 
 
     ProdutoEntity findByNome(String nome);
 
+    @Transactional
     void deleteByNome(String nome);
 }
