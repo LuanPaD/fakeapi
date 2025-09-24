@@ -82,13 +82,8 @@ public class FakeApiController {
     public ResponseEntity<ProductsDTO> buscaProdutoPorNome(@PathVariable ("nome") String nome) {
         try {
             ProductsDTO produto = produtoService.buscaProdutoPorNome(nome);
-            if (produto != null) {
-                return ResponseEntity.ok(produto);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
+            return (produto != null) ? ResponseEntity.ok(produto) : ResponseEntity.notFound().build();
         } catch (Exception e) {
-//            return ResponseEntity.notFound().build();
             return ResponseEntity.status(500).body(null);
         }
     }
